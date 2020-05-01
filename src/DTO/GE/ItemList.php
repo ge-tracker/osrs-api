@@ -7,7 +7,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 class ItemList extends DataTransferObject
 {
     /** @var \GeTracker\OsrsApi\DTO\GE\ItemDetail[] */
-    public $items;
+    public array $items;
 
     public static function fromJson($data): ItemList
     {

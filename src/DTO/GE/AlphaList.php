@@ -6,11 +6,9 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class AlphaList extends DataTransferObject
 {
-    /** @var array */
-    public $alphas;
+    public array $alphas;
 
-    /** @var int */
-    public $totalItems;
+    public int $totalItems;
 
     public static function fromJson($data): AlphaList
     {

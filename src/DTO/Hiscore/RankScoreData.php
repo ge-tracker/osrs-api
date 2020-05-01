@@ -6,9 +6,7 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class RankScoreData extends DataTransferObject
 {
-    /** @var int|null */
-    public $rank;
+    public ?int $rank = null;
 
-    /** @var int|null */
-    public $score;
+    public ?int $score = null;
 }

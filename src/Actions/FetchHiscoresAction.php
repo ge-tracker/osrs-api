@@ -2,30 +2,30 @@
 
 namespace GeTracker\OsrsApi\Actions;
 
+use Exception;
+use GeTracker\OsrsApi\DTO\Hiscore\HiscoreData;
 use GeTracker\OsrsApi\Support\HiscoreParser;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 
 class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresAction
 {
-    /** @var Client */
-    private $client;
+    private Client $client;
 
-    /** @var HiscoreParser */
-    private $hiscoreParser;
+    private HiscoreParser $hiscoreParser;
 
-    private $apiUrl = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=';
+    private string $apiUrl = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=';
 
     public function __construct(HiscoreParser $hiscoreParser)
     {
-        $this->client = new \GuzzleHttp\Client;
+        $this->client = new Client;
         $this->hiscoreParser = $hiscoreParser;
     }
 
     /**
      * {@inheritDoc}
      */
-    public function fetch(string $username): \GeTracker\OsrsApi\DTO\Hiscore\HiscoreData
+    public function fetch(string $username): HiscoreData
     {
         // Build the URL
         $url = $this->buildUrl(
@@ -50,11 +50,11 @@ class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresA
         try {
             $response = $this->client->request('GET', $url, [
                 'connect_timeout' => 4,
-                'timeout' => 4,
+                'timeout'         => 4,
             ]);
         } catch (GuzzleException $e) {
             return null;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return null;
         }
 

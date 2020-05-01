@@ -4,21 +4,15 @@ namespace GeTracker\OsrsApi\DTO\Hiscore;
 
 class ClueScrollCollection extends AbstractRankScoreDataCollection
 {
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $all;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $all;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $easy;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $easy;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $medium;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $medium;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $hard;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $hard;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $elite;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $elite;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $master;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $master;
 }

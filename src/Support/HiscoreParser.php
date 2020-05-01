@@ -13,10 +13,8 @@ class HiscoreParser
 {
     /**
      * This mapping denotes which array index should be used for which value
-     *
-     * @var array
      */
-    private $mapping = [
+    private array $mapping = [
         'stats'           => [
             'overall'      => 0,
             'attack'       => 1,
@@ -60,9 +58,9 @@ class HiscoreParser
         ],
     ];
 
-    private $raw = [];
+    private array $raw = [];
 
-    private $rankScoreDataCollectionFactory;
+    private \GeTracker\OsrsApi\Factory\AbstractRankScoreDataCollectionFactory $rankScoreDataCollectionFactory;
 
     public function __construct(AbstractRankScoreDataCollectionFactory $rankScoreDataCollectionFactory)
     {

@@ -6,18 +6,13 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class HiscoreData extends DataTransferObject
 {
-    /** @var string */
-    public $rsn;
+    public string $rsn;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatDataCollection|null */
-    public $stats;
+    public ?\GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatDataCollection $stats = null;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\BountyHunterCollection|null */
-    public $bountyHunter;
+    public ?\GeTracker\OsrsApi\DTO\Hiscore\BountyHunterCollection $bountyHunter = null;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\ClueScrollCollection|null */
-    public $clueScroll;
+    public ?\GeTracker\OsrsApi\DTO\Hiscore\ClueScrollCollection $clueScroll = null;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\LastManStandingCollection|null */
-    public $lastManStanding;
+    public ?\GeTracker\OsrsApi\DTO\Hiscore\LastManStandingCollection $lastManStanding = null;
 }

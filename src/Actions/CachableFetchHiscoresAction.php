@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\Cache;
 
 class CachableFetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresAction
 {
-    /** @var FetchHiscoresAction */
-    private $fetchHiscoresAction;
+    private \GeTracker\OsrsApi\Actions\FetchHiscoresAction $fetchHiscoresAction;
 
     public function __construct(FetchHiscoresAction $fetchHiscoresAction)
     {
@@ -24,9 +23,7 @@ class CachableFetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchH
         $cacheTime = now()->addSeconds(config('osrs-api.hiscores.cache'));
 
         /** @var HiscoreData $hiscores */
-        $hiscores = Cache::remember($cacheKey, $cacheTime, function () use ($username) {
-            return $this->fetchHiscoresAction->fetch($username);
-        });
+        $hiscores = Cache::remember($cacheKey, $cacheTime, fn() => $this->fetchHiscoresAction->fetch($username));
 
         return $hiscores;
     }

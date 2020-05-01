@@ -4,9 +4,7 @@ namespace GeTracker\OsrsApi\DTO\Hiscore;
 
 class BountyHunterCollection extends AbstractRankScoreDataCollection
 {
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $hunter;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $hunter;
 
-    /** @var \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData */
-    public $rogue;
+    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $rogue;
 }

@@ -6,26 +6,19 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class ItemDetail extends DataTransferObject
 {
-    /** @var int */
-    public $id;
+    public int $id;
 
-    /** @var string */
-    public $name;
+    public string $name;
 
-    /** @var string */
-    public $icon;
+    public string $icon;
 
-    /** @var string */
-    public $iconLarge;
+    public string $iconLarge;
 
-    /** @var string */
-    public $type;
+    public string $type;
 
-    /** @var string */
-    public $typeIcon;
+    public string $typeIcon;
 
-    /** @var string */
-    public $description;
+    public string $description;
 
     public static function fromJson($data): ItemDetail
     {

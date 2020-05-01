@@ -6,12 +6,9 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class HiscoreStatData extends DataTransferObject
 {
-    /** @var int|null */
-    public $rank;
+    public ?int $rank = null;
 
-    /** @var int|null */
-    public $level;
+    public ?int $level = null;
 
-    /** @var int|null */
-    public $exp;
+    public ?int $exp = null;
 }
