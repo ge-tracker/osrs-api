@@ -22,7 +22,7 @@ class ItemDetail extends DataTransferObject
 
     public static function fromJson($data): ItemDetail
     {
-        if (property_exists($data, 'item')) {
+        if (is_object($data) && property_exists($data, 'item')) {
             $data = $data->item;
         }
 

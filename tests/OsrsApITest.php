@@ -33,6 +33,15 @@ class OsrsApITest extends TestCase
     }
 
     /** @test */
+    public function can_get_item_details_and_wait(): void
+    {
+        $detail = $this->osrsApi->ge()->wait()->itemDetail(13576);
+
+        $this->assertSame(13576, $detail->id);
+        $this->assertSame('Dragon warhammer', $detail->name);
+    }
+
+    /** @test */
     public function can_get_alpha_categories(): void
     {
         $alphas = $this->osrsApi->ge()->listAlphas();

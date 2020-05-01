@@ -5,6 +5,7 @@ namespace GeTracker\OsrsApi\API;
 use GeTracker\OsrsApi\DTO\GE\AlphaList;
 use GeTracker\OsrsApi\DTO\GE\ItemDetail;
 use GeTracker\OsrsApi\DTO\GE\ItemList;
+use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
 
 class GeApi
@@ -14,6 +15,8 @@ class GeApi
     private const ALPHAS = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/category.json?category=1';
 
     private const ALPHA_PAGE = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/items.json';
+
+    private bool $waitForResponse = false;
 
     /**
      * Get details about an Item
@@ -25,6 +28,11 @@ class GeApi
     public function itemDetail(int $itemId): ?ItemDetail
     {
         $request = Http::get(static::ITEM_DETAIL . $itemId);
+
+        if ($this->shouldRetry($request)) {
+            sleep(3);
+            return $this->itemDetail($itemId);
+        }
 
         return $request->successful()
             ? ItemDetail::fromJson($request->object())
@@ -69,5 +77,18 @@ class GeApi
         return $request->successful()
             ? ItemList::fromJson($request->object())
             : null;
+    }
+
+    public function wait(): self
+    {
+        $this->waitForResponse = true;
+        return $this;
+    }
+
+    private function shouldRetry(Response $response): bool
+    {
+        return $this->waitForResponse &&
+            $response->successful() &&
+            $response->object() === null;
     }
 }
