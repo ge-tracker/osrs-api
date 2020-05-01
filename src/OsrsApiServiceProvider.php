@@ -35,6 +35,10 @@ class OsrsApiServiceProvider extends ServiceProvider
                 app(HiscoreParser::class)
             );
 
+            if (config('osrs-api.hiscores.cache') === null) {
+                return $fetchHiscoresAction;
+            }
+
             return new CachableFetchHiscoresAction($fetchHiscoresAction);
         });
     }

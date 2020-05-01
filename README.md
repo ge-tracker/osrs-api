@@ -14,11 +14,24 @@ composer require ge-tracker/osrs-api
 
 We recommend using this package via dependency injection in your methods, as this is a cleaner interface than a facade.
 
+### Accessing the Grand Exchange API
+
 ``` php
 public function execute(OsrsApi $osrsApi)
 {
     $item = $osrsApi->ge()->itemDetail(13576);
     echo $item->id . ': ' . $item->name;
+}
+```
+
+### Fetching hiscores
+
+``` php
+public function execute(OsrsApi $osrsApi)
+{
+    $hiscores = $osrsApi->hiscores()->fetch('Lynx Titan');
+    
+    echo 'Attack: ' . $hiscores->stats->attack->level;
 }
 ```
 
