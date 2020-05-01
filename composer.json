@@ -1,0 +1,55 @@
+{
+    "name": "ge-tracker/osrs-api",
+    "description": "Interacts with the official OSRS API",
+    "keywords": [
+        "ge-tracker",
+        "osrs-api"
+    ],
+    "homepage": "https://github.com/ge-tracker/osrs-api",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "GE Tracker",
+            "email": "james@ge-tracker.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.5",
+        "illuminate/support": "^7.0",
+        "spatie/data-transfer-object": "^2.0",
+        "spatie/laravel-queueable-action": "^2.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeTracker\\OsrsApi\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "GeTracker\\OsrsApi\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GeTracker\\OsrsApi\\OsrsApiServiceProvider"
+            ]
+        }
+    }
+}
