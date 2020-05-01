@@ -51,4 +51,16 @@ class OsrsApITest extends TestCase
         $this->assertSame(10392, $alphas->items[0]->id);
         $this->assertSame('A powdered wig', $alphas->items[0]->name);
     }
+
+    /** @test */
+    public function can_load_hiscores(): void
+    {
+        $hiscores = $this->osrsApi->hiscores()->fetch('Lynx Titan');
+
+        $this->assertSame('Lynx Titan', $hiscores->rsn);
+        $this->assertSame(99, $hiscores->stats->attack->level);
+        $this->assertSame(99, $hiscores->stats->strength->level);
+        $this->assertNull($hiscores->bountyHunter->hunter->rank);
+        $this->assertNotNull($hiscores->clueScroll->easy->score);
+    }
 }
