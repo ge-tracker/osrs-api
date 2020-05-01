@@ -1,11 +1,6 @@
-# Very short description of the package
+# OSRS API
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/ge-tracker/osrs-api.svg?style=flat-square)](https://packagist.org/packages/ge-tracker/osrs-api)
-[![Build Status](https://img.shields.io/travis/ge-tracker/osrs-api/master.svg?style=flat-square)](https://travis-ci.org/ge-tracker/osrs-api)
-[![Quality Score](https://img.shields.io/scrutinizer/g/ge-tracker/osrs-api.svg?style=flat-square)](https://scrutinizer-ci.com/g/ge-tracker/osrs-api)
-[![Total Downloads](https://img.shields.io/packagist/dt/ge-tracker/osrs-api.svg?style=flat-square)](https://packagist.org/packages/ge-tracker/osrs-api)
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package is a PHP wrapper for the OSRS API, to easily interact with the Grand Exchange and Hiscore APIs.
 
 ## Installation
 
@@ -17,8 +12,14 @@ composer require ge-tracker/osrs-api
 
 ## Usage
 
+We recommend using this package via dependency injection in your methods, as this is a cleaner interface than a facade.
+
 ``` php
-// Usage description here
+public function execute(OsrsApi $osrsApi)
+{
+    $item = $osrsApi->ge()->itemDetail(13576);
+    echo $item->id . ': ' . $item->name;
+}
 ```
 
 ### Testing
