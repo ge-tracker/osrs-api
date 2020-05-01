@@ -1,6 +1,6 @@
 # OSRS API
 
-This package is a PHP wrapper for the OSRS API, to easily interact with the Grand Exchange and Hiscore APIs.
+This package is a Laravel/PHP wrapper for the OSRS API, to easily interact with the Grand Exchange and Hiscore APIs.
 
 ## Installation
 
@@ -8,6 +8,12 @@ You can install the package via composer:
 
 ```bash
 composer require ge-tracker/osrs-api
+```
+
+If you wish to publish the package's configuration, you can run the following command:
+
+```bash
+php artisan vendor:publish --provider="GeTracker\OsrsApi\OsrsApiServiceProvider"
 ```
 
 ## Usage
@@ -25,6 +31,8 @@ public function execute(OsrsApi $osrsApi)
 ```
 
 ### Fetching hiscores
+
+All requests to the hiscores are cached for 60 seconds by default. 
 
 ``` php
 public function execute(OsrsApi $osrsApi)
