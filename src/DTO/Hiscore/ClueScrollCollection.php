@@ -4,15 +4,15 @@ namespace GeTracker\OsrsApi\DTO\Hiscore;
 
 class ClueScrollCollection extends AbstractRankScoreDataCollection
 {
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $all;
+    public RankScoreData $all;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $easy;
+    public RankScoreData $easy;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $medium;
+    public RankScoreData $medium;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $hard;
+    public RankScoreData $hard;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $elite;
+    public RankScoreData $elite;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\RankScoreData $master;
+    public RankScoreData $master;
 }

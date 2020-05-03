@@ -6,51 +6,51 @@ use Spatie\DataTransferObject\DataTransferObject;
 
 class HiscoreStatDataCollection extends DataTransferObject
 {
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $overall;
+    public HiscoreStatData $overall;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $attack;
+    public HiscoreStatData $attack;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $defence;
+    public HiscoreStatData $defence;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $strength;
+    public HiscoreStatData $strength;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $hitpoints;
+    public HiscoreStatData $hitpoints;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $ranged;
+    public HiscoreStatData $ranged;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $prayer;
+    public HiscoreStatData $prayer;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $magic;
+    public HiscoreStatData $magic;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $cooking;
+    public HiscoreStatData $cooking;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $woodcutting;
+    public HiscoreStatData $woodcutting;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $fletching;
+    public HiscoreStatData $fletching;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $fishing;
+    public HiscoreStatData $fishing;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $firemaking;
+    public HiscoreStatData $firemaking;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $crafting;
+    public HiscoreStatData $crafting;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $smithing;
+    public HiscoreStatData $smithing;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $mining;
+    public HiscoreStatData $mining;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $herblore;
+    public HiscoreStatData $herblore;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $agility;
+    public HiscoreStatData $agility;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $thieving;
+    public HiscoreStatData $thieving;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $slayer;
+    public HiscoreStatData $slayer;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $farming;
+    public HiscoreStatData $farming;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $runecraft;
+    public HiscoreStatData $runecraft;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $hunter;
+    public HiscoreStatData $hunter;
 
-    public \GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatData $construction;
+    public HiscoreStatData $construction;
 }

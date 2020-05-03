@@ -39,26 +39,15 @@ class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresA
     }
 
     /**
-     * Make a request to the OSRS Hiscores API
+     * Append sanitized username to the API URL
      *
-     * @param string $url
+     * @param string $username
      *
-     * @return string|null
+     * @return string
      */
-    private function makeApiRequest(string $url): ?string
+    private function buildUrl(string $username): string
     {
-        try {
-            $response = $this->client->request('GET', $url, [
-                'connect_timeout' => 4,
-                'timeout'         => 4,
-            ]);
-        } catch (GuzzleException $e) {
-            return null;
-        } catch (Exception $e) {
-            return null;
-        }
-
-        return (string)$response->getBody();
+        return $this->apiUrl . $username;
     }
 
     /**
@@ -88,14 +77,25 @@ class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresA
     }
 
     /**
-     * Append sanitized username to the API URL
+     * Make a request to the OSRS Hiscores API
      *
-     * @param string $username
+     * @param string $url
      *
-     * @return string
+     * @return string|null
      */
-    private function buildUrl(string $username): string
+    private function makeApiRequest(string $url): ?string
     {
-        return $this->apiUrl . $username;
+        try {
+            $response = $this->client->request('GET', $url, [
+                'connect_timeout' => 4,
+                'timeout'         => 4,
+            ]);
+        } catch (GuzzleException $e) {
+            return null;
+        } catch (Exception $e) {
+            return null;
+        }
+
+        return (string)$response->getBody();
     }
 }

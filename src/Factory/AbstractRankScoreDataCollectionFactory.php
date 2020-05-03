@@ -6,6 +6,7 @@ use GeTracker\OsrsApi\DTO\Hiscore\AbstractRankScoreDataCollection;
 use GeTracker\OsrsApi\DTO\Hiscore\BountyHunterCollection;
 use GeTracker\OsrsApi\DTO\Hiscore\ClueScrollCollection;
 use GeTracker\OsrsApi\DTO\Hiscore\LastManStandingCollection;
+use RuntimeException;
 
 class AbstractRankScoreDataCollectionFactory
 {
@@ -27,7 +28,7 @@ class AbstractRankScoreDataCollectionFactory
             case 'lastManStanding':
                 return $this->createLastManStandingCollection($data);
             default:
-                throw new \RuntimeException('Unrecognised `$section` supplied to factory');
+                throw new RuntimeException('Unrecognised `$section` supplied to factory');
         }
     }
 

@@ -39,6 +39,13 @@ class GeApi
             : null;
     }
 
+    private function shouldRetry(Response $response): bool
+    {
+        return $this->waitForResponse &&
+            $response->successful() &&
+            $response->object() === null;
+    }
+
     /**
      * List the first letter of every item, and get the count of each
      *
@@ -83,12 +90,5 @@ class GeApi
     {
         $this->waitForResponse = true;
         return $this;
-    }
-
-    private function shouldRetry(Response $response): bool
-    {
-        return $this->waitForResponse &&
-            $response->successful() &&
-            $response->object() === null;
     }
 }

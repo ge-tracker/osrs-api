@@ -60,7 +60,7 @@ class HiscoreParser
 
     private array $raw = [];
 
-    private \GeTracker\OsrsApi\Factory\AbstractRankScoreDataCollectionFactory $rankScoreDataCollectionFactory;
+    private AbstractRankScoreDataCollectionFactory $rankScoreDataCollectionFactory;
 
     public function __construct(AbstractRankScoreDataCollectionFactory $rankScoreDataCollectionFactory)
     {
@@ -134,6 +134,18 @@ class HiscoreParser
     }
 
     /**
+     * Return null instead of a -1
+     *
+     * @param string $stat
+     *
+     * @return int|null
+     */
+    private function showNull(string $stat): ?int
+    {
+        return ($stat === '-1') ? null : (int)$stat;
+    }
+
+    /**
      * Parse ranked stats (i.e. bountyHunter)
      *
      * @param string $section
@@ -154,17 +166,5 @@ class HiscoreParser
         }
 
         return $this->rankScoreDataCollectionFactory->make($section, $stats);
-    }
-
-    /**
-     * Return null instead of a -1
-     *
-     * @param string $stat
-     *
-     * @return int|null
-     */
-    private function showNull(string $stat): ?int
-    {
-        return ($stat === '-1') ? null : (int)$stat;
     }
 }

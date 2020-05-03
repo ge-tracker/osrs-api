@@ -2,6 +2,8 @@
 
 namespace GeTracker\OsrsApi\Contracts;
 
+use GeTracker\OsrsApi\DTO\Hiscore\HiscoreData;
+
 interface FetchHiscoresAction
 {
     /**
@@ -9,7 +11,7 @@ interface FetchHiscoresAction
      *
      * @param string $username
      *
-     * @return \GeTracker\OsrsApi\DTO\Hiscore\HiscoreData
+     * @return HiscoreData
      */
-    public function fetch(string $username): \GeTracker\OsrsApi\DTO\Hiscore\HiscoreData;
+    public function fetch(string $username): HiscoreData;
 }

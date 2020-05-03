@@ -8,11 +8,11 @@ class HiscoreData extends DataTransferObject
 {
     public string $rsn;
 
-    public ?\GeTracker\OsrsApi\DTO\Hiscore\HiscoreStatDataCollection $stats = null;
+    public ?HiscoreStatDataCollection $stats = null;
 
-    public ?\GeTracker\OsrsApi\DTO\Hiscore\BountyHunterCollection $bountyHunter = null;
+    public ?BountyHunterCollection $bountyHunter = null;
 
-    public ?\GeTracker\OsrsApi\DTO\Hiscore\ClueScrollCollection $clueScroll = null;
+    public ?ClueScrollCollection $clueScroll = null;
 
-    public ?\GeTracker\OsrsApi\DTO\Hiscore\LastManStandingCollection $lastManStanding = null;
+    public ?LastManStandingCollection $lastManStanding = null;
 }
