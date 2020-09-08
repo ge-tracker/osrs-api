@@ -10,11 +10,9 @@ use Illuminate\Support\Facades\Http;
 
 class GeApi
 {
-    private const ITEM_DETAIL = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=';
-
-    private const ALPHAS = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/category.json?category=1';
-
-    private const ALPHA_PAGE = 'http://services.runescape.com/m=itemdb_oldschool/api/catalogue/items.json';
+    private const ITEM_DETAIL = 'https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=';
+    private const ALPHAS = 'https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/category.json?category=1';
+    private const ALPHA_PAGE = 'https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/items.json';
 
     private bool $waitForResponse = false;
 
