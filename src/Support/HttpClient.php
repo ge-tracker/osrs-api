@@ -2,6 +2,7 @@
 
 namespace GeTracker\OsrsApi\Support;
 
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
 class HttpClient
@@ -14,7 +15,7 @@ class HttpClient
      * @return \Illuminate\Http\Client\PendingRequest
      * @see \Illuminate\Support\Facades\Http
      */
-    public static function getInstance(): \Illuminate\Http\Client\PendingRequest
+    public static function getInstance(): PendingRequest
     {
         return Http::withHeaders(['User-Agent' => self::USER_AGENT]);
     }

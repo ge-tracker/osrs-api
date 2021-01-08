@@ -12,7 +12,7 @@ class ItemList extends DataTransferObject
     public static function fromJson($data): ItemList
     {
         return new self([
-            'items' => array_map(fn($item) => ItemDetail::fromJson($item), $data->items),
+            'items' => array_map(static fn($item) => ItemDetail::fromJson($item), $data->items),
         ]);
     }
 }

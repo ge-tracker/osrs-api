@@ -8,7 +8,7 @@ use Orchestra\Testbench\TestCase;
 
 class HiscoreParserTest extends TestCase
 {
-    protected $rawStats;
+    protected string $rawStats;
 
     protected function setUp(): void
     {
@@ -99,28 +99,28 @@ RAW;
     }
 
     /** @test */
-    public function can_parse_hiscores()
+    public function can_parse_hiscores(): void
     {
         $parser = new HiscoreParser(new AbstractRankScoreDataCollectionFactory());
         $hiscores = $parser->parse('Zezima', $this->rawStats);
 
-        $this->assertSame('Zezima', $hiscores->rsn);
-        $this->assertSame(99, $hiscores->stats->attack->level);
-        $this->assertSame(99, $hiscores->stats->strength->level);
-        $this->assertNull($hiscores->bountyHunter->hunter->rank);
-        $this->assertNotNull($hiscores->clueScroll->easy->score);
+        self::assertSame('Zezima', $hiscores->rsn);
+        self::assertSame(99, $hiscores->stats->attack->level);
+        self::assertSame(99, $hiscores->stats->strength->level);
+        self::assertNull($hiscores->bountyHunter->hunter->rank);
+        self::assertNotNull($hiscores->clueScroll->easy->score);
     }
 
     /** @test */
-    public function return_nulled_object_on_not_found()
+    public function return_nulled_object_on_not_found(): void
     {
         $parser = new HiscoreParser(new AbstractRankScoreDataCollectionFactory());
         $hiscores = $parser->parse('oaisdjoaisdjoaisjd', null);
 
-        $this->assertSame('oaisdjoaisdjoaisjd', $hiscores->rsn);
-        $this->assertNull($hiscores->stats);
-        $this->assertNull($hiscores->bountyHunter);
-        $this->assertNull($hiscores->clueScroll);
-        $this->assertNull($hiscores->lastManStanding);
+        self::assertSame('oaisdjoaisdjoaisjd', $hiscores->rsn);
+        self::assertNull($hiscores->stats);
+        self::assertNull($hiscores->bountyHunter);
+        self::assertNull($hiscores->clueScroll);
+        self::assertNull($hiscores->lastManStanding);
     }
 }

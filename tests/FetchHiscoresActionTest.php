@@ -19,11 +19,11 @@ class FetchHiscoresActionTest extends TestCase
         $action = new FetchHiscoresAction(app(HiscoreParser::class));
         $hiscores = $action->fetch('lynx_titan');
 
-        $this->assertSame('Lynx Titan', $hiscores->rsn);
-        $this->assertSame(99, $hiscores->stats->attack->level);
-        $this->assertSame(99, $hiscores->stats->strength->level);
-        $this->assertNull($hiscores->bountyHunter->hunter->rank);
-        $this->assertNotNull($hiscores->clueScroll->easy->score);
+        self::assertSame('Lynx Titan', $hiscores->rsn);
+        self::assertSame(99, $hiscores->stats->attack->level);
+        self::assertSame(99, $hiscores->stats->strength->level);
+        self::assertNull($hiscores->bountyHunter->hunter->rank);
+        self::assertNotNull($hiscores->clueScroll->easy->score);
     }
 
     /** @test */

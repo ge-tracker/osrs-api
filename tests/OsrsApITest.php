@@ -29,8 +29,8 @@ class OsrsApITest extends TestCase
     {
         $detail = $this->osrsApi->ge()->itemDetail(13576);
 
-        $this->assertSame(13576, $detail->id);
-        $this->assertSame('Dragon warhammer', $detail->name);
+        self::assertSame(13576, $detail->id);
+        self::assertSame('Dragon warhammer', $detail->name);
     }
 
     /** @test */
@@ -38,8 +38,8 @@ class OsrsApITest extends TestCase
     {
         $detail = $this->osrsApi->ge()->wait()->itemDetail(13576);
 
-        $this->assertSame(13576, $detail->id);
-        $this->assertSame('Dragon warhammer', $detail->name);
+        self::assertSame(13576, $detail->id);
+        self::assertSame('Dragon warhammer', $detail->name);
     }
 
     /** @test */
@@ -47,10 +47,10 @@ class OsrsApITest extends TestCase
     {
         $alphas = $this->osrsApi->ge()->listAlphas();
 
-        $this->assertGreaterThan(500, $alphas->totalItems);
-        $this->assertGreaterThan(5, $alphas->alphas['numeric']);
-        $this->assertGreaterThan(200, $alphas->alphas['a']);
-        $this->assertGreaterThan(200, $alphas->alphas['s']);
+        self::assertGreaterThan(500, $alphas->totalItems);
+        self::assertGreaterThan(5, $alphas->alphas['numeric']);
+        self::assertGreaterThan(200, $alphas->alphas['a']);
+        self::assertGreaterThan(200, $alphas->alphas['s']);
     }
 
     /** @test */
@@ -58,8 +58,8 @@ class OsrsApITest extends TestCase
     {
         $alphas = $this->osrsApi->ge()->alpha('a');
 
-        $this->assertSame(10392, $alphas->items[0]->id);
-        $this->assertSame('A powdered wig', $alphas->items[0]->name);
+        self::assertSame(10392, $alphas->items[0]->id);
+        self::assertSame('A powdered wig', $alphas->items[0]->name);
     }
 
     /** @test */
@@ -71,10 +71,10 @@ class OsrsApITest extends TestCase
 
         $hiscores = $this->osrsApi->hiscores()->fetch('Lynx Titan');
 
-        $this->assertSame('Lynx Titan', $hiscores->rsn);
-        $this->assertSame(99, $hiscores->stats->attack->level);
-        $this->assertSame(99, $hiscores->stats->strength->level);
-        $this->assertNull($hiscores->bountyHunter->hunter->rank);
-        $this->assertNotNull($hiscores->clueScroll->easy->score);
+        self::assertSame('Lynx Titan', $hiscores->rsn);
+        self::assertSame(99, $hiscores->stats->attack->level);
+        self::assertSame(99, $hiscores->stats->strength->level);
+        self::assertNull($hiscores->bountyHunter->hunter->rank);
+        self::assertNotNull($hiscores->clueScroll->easy->score);
     }
 }

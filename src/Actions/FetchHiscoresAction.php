@@ -5,19 +5,15 @@ namespace GeTracker\OsrsApi\Actions;
 use GeTracker\OsrsApi\DTO\Hiscore\HiscoreData;
 use GeTracker\OsrsApi\Support\HiscoreParser;
 use GeTracker\OsrsApi\Support\HttpClient;
-use GuzzleHttp\Client;
 
 class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresAction
 {
-    private Client $client;
-
     private HiscoreParser $hiscoreParser;
 
     private string $apiUrl = 'https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player=';
 
     public function __construct(HiscoreParser $hiscoreParser)
     {
-        $this->client = new Client;
         $this->hiscoreParser = $hiscoreParser;
     }
 

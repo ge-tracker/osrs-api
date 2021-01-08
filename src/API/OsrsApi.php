@@ -29,5 +29,7 @@ class OsrsApi
         if ($name === 'hiscores') {
             return $this->fetchHiscoresAction;
         }
+
+        return null;
     }
 }
