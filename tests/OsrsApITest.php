@@ -27,6 +27,10 @@ class OsrsApITest extends TestCase
     /** @test */
     public function can_get_item_details(): void
     {
+        Http::fake([
+            'secure.runescape.com/*' => Http::response(file_get_contents(base_path('../../../../tests/Stubs/ge.detail.json'))),
+        ]);
+
         $detail = $this->osrsApi->ge()->itemDetail(13576);
 
         self::assertSame(13576, $detail->id);
@@ -36,6 +40,10 @@ class OsrsApITest extends TestCase
     /** @test */
     public function can_get_item_details_and_wait(): void
     {
+        Http::fake([
+            'secure.runescape.com/*' => Http::response(file_get_contents(base_path('../../../../tests/Stubs/ge.detail.json'))),
+        ]);
+
         $detail = $this->osrsApi->ge()->wait()->itemDetail(13576);
 
         self::assertSame(13576, $detail->id);
@@ -45,6 +53,10 @@ class OsrsApITest extends TestCase
     /** @test */
     public function can_get_alpha_categories(): void
     {
+        Http::fake([
+            'secure.runescape.com/*' => Http::response(file_get_contents(base_path('../../../../tests/Stubs/ge.alphas.json'))),
+        ]);
+
         $alphas = $this->osrsApi->ge()->listAlphas();
 
         self::assertGreaterThan(500, $alphas->totalItems);
@@ -56,6 +68,10 @@ class OsrsApITest extends TestCase
     /** @test */
     public function can_get_alpha_a(): void
     {
+        Http::fake([
+            'secure.runescape.com/*' => Http::response(file_get_contents(base_path('../../../../tests/Stubs/ge.alpha.json'))),
+        ]);
+
         $alphas = $this->osrsApi->ge()->alpha('a');
 
         self::assertSame(10392, $alphas->items[0]->id);

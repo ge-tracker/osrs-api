@@ -5,8 +5,8 @@ namespace GeTracker\OsrsApi\API;
 use GeTracker\OsrsApi\DTO\GE\AlphaList;
 use GeTracker\OsrsApi\DTO\GE\ItemDetail;
 use GeTracker\OsrsApi\DTO\GE\ItemList;
+use GeTracker\OsrsApi\Support\HttpClient;
 use Illuminate\Http\Client\Response;
-use Illuminate\Support\Facades\Http;
 
 class GeApi
 {
@@ -25,7 +25,8 @@ class GeApi
      */
     public function itemDetail(int $itemId): ?ItemDetail
     {
-        $request = Http::get(static::ITEM_DETAIL . $itemId);
+        $request = HttpClient::getInstance()
+            ->get(static::ITEM_DETAIL . $itemId);
 
         if ($this->shouldRetry($request)) {
             sleep(3);
@@ -51,7 +52,8 @@ class GeApi
      */
     public function listAlphas(): ?AlphaList
     {
-        $request = Http::get(static::ALPHAS);
+        $request = HttpClient::getInstance()
+            ->get(static::ALPHAS);
 
         return $request->successful()
             ? AlphaList::fromJson($request->object())
@@ -73,11 +75,12 @@ class GeApi
             $alpha = '#';
         }
 
-        $request = Http::get(static::ALPHA_PAGE, [
-            'category' => 1,
-            'alpha'    => $alpha,
-            'page'     => $page,
-        ]);
+        $request = HttpClient::getInstance()
+            ->get(static::ALPHA_PAGE, [
+                'category' => 1,
+                'alpha'    => $alpha,
+                'page'     => $page,
+            ]);
 
         return $request->successful()
             ? ItemList::fromJson($request->object())
