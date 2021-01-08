@@ -4,6 +4,7 @@ namespace GeTracker\OsrsApi\Tests;
 
 use GeTracker\OsrsApi\API\OsrsApi;
 use GeTracker\OsrsApi\OsrsApiServiceProvider;
+use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase;
 
 class OsrsApITest extends TestCase
@@ -64,6 +65,10 @@ class OsrsApITest extends TestCase
     /** @test */
     public function can_load_hiscores(): void
     {
+        Http::fake([
+            'secure.runescape.com/*' => Http::response(file_get_contents(base_path('../../../../tests/Stubs/hiscore.success.txt'))),
+        ]);
+
         $hiscores = $this->osrsApi->hiscores()->fetch('Lynx Titan');
 
         $this->assertSame('Lynx Titan', $hiscores->rsn);

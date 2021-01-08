@@ -1,0 +1,145 @@
+     <!doctype html>
+    <html class='no-js' lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Unavailable - RuneScape | Old School RuneScape</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <meta name='description' content="The system you requested is currently unavailable">
+        <meta name='author' content='Jagex'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <link rel='dns-prefetch' href='//www.google-analytics.com'>
+        <link rel='dns-prefetch' href='//ajax.googleapis.com'>
+        <link rel='dns-prefetch' href='//connect.facebook.net'>
+                <link rel='stylesheet' href='https://www.runescape.com/css/c/responsive/dual/vendor-135.css' />
+                <link rel='stylesheet' href='https://www.runescape.com/css/c/responsive/dual/site-135.css' />
+        <meta name='format-detection' content='telephone=no' />
+        <meta name='theme-color' content='#1C2C34' />
+        <meta name='msapplication-navbutton-color' content='#1C2C34'>
+        <meta name='apple-mobile-web-app-capable' content='yes'>
+        <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+        <link rel='apple-touch-icon' sizes='57x57' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-57.png' />
+        <link rel='apple-touch-icon' sizes='60x60' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-60.png' />
+        <link rel='apple-touch-icon' sizes='72x72' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-72.png' />
+        <link rel='apple-touch-icon' sizes='76x76' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-76.png' />
+        <link rel='apple-touch-icon' sizes='114x114' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-114.png' />
+        <link rel='apple-touch-icon' sizes='120x120' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-120.png' />
+        <link rel='apple-touch-icon' sizes='144x144' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-144.png' />
+        <link rel='apple-touch-icon' sizes='152x152' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-152.png' />
+        <link rel='apple-touch-icon' sizes='180x180' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-180.png' />
+        <link rel='icon' type='image/png' sizes='192x192' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-192.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-32.png' />
+        <link rel='icon' type='image/png' sizes='96x96' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-96.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='https://www.runescape.com/img/responsive/runescape/icons/runescape-16.png' />
+        <meta name='msapplication-TileColor' content='#ffffff' />
+        <meta name='msapplication-TileImage' content='https://www.runescape.com/img/responsive/runescape/icons/runescape-144.png' />
+            <meta property='og:title' content='Unavailable - RuneScape | Old School RuneScape'>
+            <meta property='og:site_name' content='RuneScape'>
+        <meta property='og:image' content='https://www.runescape.com/img/responsive/runescape/social-share/social-share-fb.jpg?1'>
+        <meta property='og:url' content='https://www.runescape.com/unavailable'>
+            <meta property='og:description' content='The system you requested is currently unavailable'>
+        <meta name='twitter:domain' content='RuneScape.com'>
+        <meta name='twitter:url' content='https://www.runescape.com/unavailable'>
+            <meta name='twitter:title' content='Unavailable - RuneScape | Old School RuneScape'>
+            <meta name='twitter:description' content='The system you requested is currently unavailable'>
+        <meta name='twitter:image:src' content='https://www.runescape.com/img/responsive/runescape/social-share/social-share-fb.jpg?1'>
+        <meta name='twitter:site' content='@RuneScape'>
+        <meta name='google-site-verification' content='pUwl5KYHKSZ6tbbgsR2wYNv1kbVmsYral3iFmijHTWM' />
+        <link rel='manifest' href='https://www.runescape.com/manifest.json' />
+        <script>
+            var CM = {lib:{}},
+                DU = DU || {};
+            DU.components = {};
+            DU.constant = {
+                url: {
+                    home: 'https://www.runescape.com/'
+                }
+            };
+            document.domain = 'runescape.com';
+        </script>
+    </head>
+    <body class=' p-unavailable' id='p-unavailable'>
+    <main class='l-vista l-vista--size-narrow l-vista--state-error' data-value=''>
+        <div class='l-vista__central'>
+            <div class='l-vista__container ' id='l-vista__container'>
+                <div class='l-vista__logo'>
+    <img src='https://www.runescape.com/img/responsive/common/logos/oldschool.png' data-interchange='[https://www.runescape.com/img/responsive/common/logos/oldschool.png, small], [https://www.runescape.com/img/responsive/common/logos/oldschool@2x.png, retina]' alt="Old School RuneScape Logo" title="Old School RuneScape" data-test='product-logo-img-os' />
+    <img src='https://www.runescape.com/img/responsive/common/logos/runescape.png' data-interchange='[https://www.runescape.com/img/responsive/common/logos/runescape.png, small], [https://www.runescape.com/img/responsive/common/logos/runescape@2x.png, retina]' alt=" RuneScape Logo" title=" RuneScape" data-test='product-logo-img-rs' />
+                </div>
+    <h1>Unavailable</h1>
+    <p>Sorry, this part of the website is currently unavailable.</p>
+    <a class='a-button a-button--size-full a-button--style-no-margin' href='https://www.runescape.com/'>Home Page</a>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script>
+        window.cookieconsent_options = {
+            message: "We use cookies to make our site work correctly, to help understand how it is used and to provide more relevant ads on Jagex websites and others. By continuing to use the site you consent to the use of first and third-party cookies and other similar technologies. To learn more please visit our  <a href='https://www.jagex.com/terms/privacy' target='_blank'>privacy policy</a> and our <a href='https://www.jagex.com/terms/cookies' target='_blank'>cookie policy</a>.",
+            dismiss: "Got it",
+            link: 'https://www.jagex.com/terms/cookies',
+            showLink: true,
+            theme: false,
+            markup: '<div class="c-cookie-consent"><p class="c-cookie-consent__copy">[[options.message]]</p><div class="c-cookie-consent__options"><a href="#null" data-cc-event="click:dismiss" target="_blank" class="a-button c-cookie-consent__dismiss">[[options.dismiss]]</a></div></div>'
+        }
+    </script>
+
+        <script src='https://www.runescape.com/js/c/responsive/vendor-131.js'></script>
+
+	<script>
+        var gtmSite = 'dual';
+
+            var gtmUser = {
+                language: 0,
+                isLoggedIn: 0
+            };
+
+        if (typeof(dataLayer) !== 'undefined'){
+            dataLayer[0].user = gtmUser;
+        } else {
+            var dataLayer = [{
+                'user': gtmUser
+            }];
+        }
+
+        if (typeof(Cookies.get('JXFRONTUID')) !== 'undefined') {
+            if (typeof(dataLayer) !== 'undefined'){
+                dataLayer[0].JXFRONTUID = Cookies.get('JXFRONTUID');
+            } else {
+                var dataLayer = [{
+                    'JXFRONTUID': Cookies.get('JXFRONTUID')
+                }];
+            }
+        }
+
+        if (typeof(Cookies.get('bidalgouid')) !== 'undefined') {
+            if (typeof(dataLayer) !== 'undefined'){
+                dataLayer[0].bidalgouid = Cookies.get('bidalgouid');
+            } else {
+                var dataLayer = [{
+                    'bidalgouid': Cookies.get('bidalgouid')
+                }];
+            }
+        }
+
+		(function(w,d,s,l,i){
+			w[l]=w[l]||[];
+			w[l].push({
+				'gtm.start': new Date().getTime(),
+				event:'gtm.js',
+				site: gtmSite
+			});
+			var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),
+				dl=l!='dataLayer'?'&l='+l:'';
+
+			j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+			f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NRKJSQ');
+	</script>
+
+            <script src="https://www.runescape.com/js/rs3/cookie_consent-131.js"></script>
+            <script src="https://www.runescape.com/js/c/responsive/theme-dual-131.js"></script>
+</body>
+</html>

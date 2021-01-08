@@ -2,11 +2,10 @@
 
 namespace GeTracker\OsrsApi\Actions;
 
-use Exception;
 use GeTracker\OsrsApi\DTO\Hiscore\HiscoreData;
 use GeTracker\OsrsApi\Support\HiscoreParser;
+use GeTracker\OsrsApi\Support\HttpClient;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\GuzzleException;
 
 class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresAction
 {
@@ -85,17 +84,32 @@ class FetchHiscoresAction implements \GeTracker\OsrsApi\Contracts\FetchHiscoresA
      */
     private function makeApiRequest(string $url): ?string
     {
-        try {
-            $response = $this->client->request('GET', $url, [
-                'connect_timeout' => 4,
-                'timeout'         => 4,
-            ]);
-        } catch (GuzzleException $e) {
-            return null;
-        } catch (Exception $e) {
+        $response = HttpClient::getInstance()
+            ->timeout(4)
+            ->get($url);
+
+        // We encountered an error when accessing the API
+        if (!$response->successful()) {
             return null;
         }
 
-        return (string)$response->getBody();
+        $body = $response->body();
+
+        return !$this->requestFailed($body) ? $body : null;
+    }
+
+    /**
+     * Determine if the request has actually failed.
+     *
+     * Checks the returned content for HTML. This is required as when the Hiscores API is offline, Jagex
+     * returns an HTML page with HTTP status 200.
+     *
+     * @param string $body
+     *
+     * @return bool
+     */
+    private function requestFailed(string $body): bool
+    {
+        return strpos($body, '<html') !== false;
     }
 }
