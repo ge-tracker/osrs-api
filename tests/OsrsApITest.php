@@ -35,6 +35,7 @@ class OsrsApITest extends TestCase
 
         self::assertSame(13576, $detail->id);
         self::assertSame('Dragon warhammer', $detail->name);
+        self::assertTrue($detail->members);
     }
 
     /** @test */

@@ -7,18 +7,13 @@ use Spatie\DataTransferObject\DataTransferObject;
 class ItemDetail extends DataTransferObject
 {
     public int $id;
-
     public string $name;
-
     public string $icon;
-
     public string $iconLarge;
-
     public string $type;
-
     public string $typeIcon;
-
     public string $description;
+    public bool $members;
 
     public static function fromJson($data): ItemDetail
     {
@@ -34,6 +29,7 @@ class ItemDetail extends DataTransferObject
             'type'        => $data->type ?? null,
             'typeIcon'    => $data->typeIcon ?? null,
             'description' => $data->description ?? null,
+            'members'     => $data->members === 'true',
         ]);
     }
 }
