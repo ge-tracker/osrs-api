@@ -15,7 +15,7 @@ class ItemDetail extends DataTransferObject
     public string $description;
     public bool $members;
 
-    public static function fromJson($data): ItemDetail
+    public static function fromJson($data): self
     {
         if (is_object($data) && property_exists($data, 'item')) {
             $data = $data->item;

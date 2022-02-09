@@ -10,7 +10,7 @@ class AlphaList extends DataTransferObject
 
     public int $totalItems;
 
-    public static function fromJson($data): AlphaList
+    public static function fromJson($data): self
     {
         [$alphas, $total] = self::fromAlphas($data->alpha);
 

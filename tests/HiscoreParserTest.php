@@ -14,7 +14,7 @@ class HiscoreParserTest extends TestCase
     {
         parent::setUp();
 
-        $this->rawStats = <<<RAW
+        $this->rawStats = <<<'RAW'
 168085,1852,119469812
 113635,99,13217770
 177825,92,7131488
@@ -95,7 +95,6 @@ class HiscoreParserTest extends TestCase
 79911,234
 
 RAW;
-
     }
 
     /** @test */

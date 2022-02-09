@@ -30,6 +30,7 @@ class GeApi
 
         if ($this->shouldRetry($request)) {
             sleep(3);
+
             return $this->itemDetail($itemId);
         }
 
@@ -90,6 +91,7 @@ class GeApi
     public function wait(): self
     {
         $this->waitForResponse = true;
+
         return $this;
     }
 }
